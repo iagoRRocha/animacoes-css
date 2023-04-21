@@ -1,0 +1,98 @@
+@use 'varibles'
+@use 'mixins'
+
+*
+    font-family: 'Josefin Sans'
+    padding: 0
+    margin: 0
+    box-sizing: border-box 
+
+body
+    background-color: varibles.$bg-color
+    color: varibles.$text-color
+
+    a 
+        color: varibles.$text-color
+        text-decoration: none
+        transition: .4s
+    
+    ul
+        list-style: none
+
+.header
+    display: flex
+    justify-content: space-between
+    @include mixins.container
+
+    &-brand
+        color: varibles.$primary-color
+        font-size: 3rem
+    
+    &-navbar
+        ul
+            height: 100%
+            @include mixins.flex-center
+
+            li
+                margin: 0 1rem
+                text-transform: uppercase
+                font-size: .8rem
+
+                .active
+                    color: varibles.$secundary-color
+
+                a
+                    &:hover
+                        color: varibles.$secundary-color
+    &-social-midia
+        ul
+            @include mixins.flex-center
+            height: 100%
+
+            li
+                margin: 0 1rem
+            
+            a
+                &:hover
+                    color: varibles.$secundary-color
+
+.galery
+    @include mixins.flex-center
+    @include mixins.container
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 0
+
+    &-card
+        width: 31%
+        height: 400px
+        margin-bottom: 4%
+
+        &-title
+            font-size:2rem
+            font-weight: 300
+            margin-bottom: 1rem
+
+        &-btn
+            padding: .4rem .6rem
+            border: 1px solid varibles.$primary-color
+            color: varibles.$primary-color
+            font-weight: 400
+            text-transform: uppercase
+            letter-spacing: 1px
+
+            &:hover
+                background: varibles.$primary-color
+                color: varibles.$bg-color
+    #card-1
+        @include mixins.bg-img('image.jpg')
+    #card-2
+        @include mixins.bg-img('image-2.jpg')
+    #card-3
+        @include mixins.bg-img('image-3.jpg')
+    #card-4
+        @include mixins.bg-img('image-4.jpg')
+    #card-5
+        @include mixins.bg-img('image-5.jpg')
+    #card-5
+        @include mixins.bg-img('image-6.jpg')

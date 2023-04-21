@@ -1,0 +1,14 @@
+@use 'varibles'
+
+@mixin container
+    max-width: varibles.$container-width
+    padding: 1.5rem
+    margin: 0 auto
+
+@mixin flex-center
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin bg-img($img)
+    background-image: '../img/#{$img}'
